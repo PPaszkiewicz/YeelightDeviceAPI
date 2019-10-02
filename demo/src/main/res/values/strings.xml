@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">YeelightDeviceAPI</string>
+    <string name="title_about">About</string>
+    <string name="tips_template">%1$s\n%2$s</string>
+
+    <string name="title_live">Live connection</string>
+    <string name="tips_live">Demo using live connection - stays connected as long as there are active LiveData listeners.</string>
+
+    <string name="title_auto">Auto connection</string>
+    <string name="tips_auto">Demo using auto connection - connects for a brief moment after sending data to the device.</string>
+
+    <string name="title_cached">No scan</string>
+    <string name="tips_cached">Demo using auto connection without performing automatic device scan. Instead it presents cached devices and gives option for manual scan.</string>
+
+    <string name="tips_general">Click on bulb icon to see all device data.\nLong click [temp, rgb, hsv] buttons to set scene w/ brightness.</string>
+</resources>

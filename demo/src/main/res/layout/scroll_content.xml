@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:ignore="HardcodedText">
+
+    <TextView
+        android:id="@+id/txtGeneralHint"
+        style="@style/SmallTitle"
+        android:text="@string/title_about" />
+
+    <TextView
+        android:id="@+id/txtRecyclerHint"
+        style="@style/SmallHint"
+        android:layout_marginTop="0dp"
+        tools:text="@string/tips_general" />
+
+    <TextView
+        android:id="@+id/txtPowerHint"
+        style="@style/SmallTitle"
+        android:text="Power"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnOn"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#008800"
+            android:text="Turn ON" />
+
+        <Button
+            android:id="@+id/btnToggle"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TOGGLE" />
+
+        <Button
+            android:id="@+id/btnOff"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#AA0000"
+            android:text="Turn OFF" />
+
+        <Button
+            android:id="@+id/btnDefault"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Default" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtAdjustHint"
+        style="@style/SmallTitle"
+        android:text="Adjust"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtAdjustHintBrightness"
+            style="@style/SmallHint"
+            android:layout_width="0dp"
+            android:gravity="center_horizontal"
+            android:text="Brightness"
+            app:layout_constraintEnd_toEndOf="@+id/btnBrightInc"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtAdjustHintColorTemp"
+            style="@style/SmallHint"
+            android:layout_width="0dp"
+            android:gravity="center_horizontal"
+            android:text="Temp"
+            app:layout_constraintEnd_toEndOf="@+id/btnTempInc"
+            app:layout_constraintStart_toStartOf="@+id/btnTempDec"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtAdjustHintColor"
+            style="@style/SmallHint"
+            android:layout_width="0dp"
+            android:gravity="center_horizontal"
+            android:text="Color"
+            app:layout_constraintEnd_toEndOf="@+id/btnColorCircle"
+            app:layout_constraintStart_toStartOf="@+id/btnColorCircle"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnBrightDec"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#9988FF"
+            android:text="-"
+            app:layout_constraintEnd_toStartOf="@+id/btnBrightCircle"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtAdjustHintBrightness" />
+
+        <Button
+            android:id="@+id/btnBrightCircle"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#9988FF"
+            android:text="O"
+            app:layout_constraintBaseline_toBaselineOf="@+id/btnBrightDec"
+            app:layout_constraintEnd_toStartOf="@+id/btnBrightInc"
+            app:layout_constraintStart_toEndOf="@+id/btnBrightDec" />
+
+        <Button
+            android:id="@+id/btnBrightInc"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#9988FF"
+            android:text="+"
+            app:layout_constraintBaseline_toBaselineOf="@+id/btnBrightDec"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnBrightCircle" />
+
+        <Button
+            android:id="@+id/btnTempDec"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FF8800"
+            android:text="-"
+            app:layout_constraintEnd_toStartOf="@+id/btnTempCircle"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@+id/btnBrightInc"
+            app:layout_constraintTop_toBottomOf="@+id/txtAdjustHintBrightness" />
+
+        <Button
+            android:id="@+id/btnTempCircle"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FF8800"
+            android:text="O"
+            app:layout_constraintBaseline_toBaselineOf="@+id/btnBrightDec"
+            app:layout_constraintEnd_toStartOf="@+id/btnTempInc"
+            app:layout_constraintStart_toEndOf="@+id/btnTempDec" />
+
+        <Button
+            android:id="@+id/btnTempInc"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FF8800"
+            android:text="+"
+            app:layout_constraintBaseline_toBaselineOf="@+id/btnBrightDec"
+            app:layout_constraintEnd_toStartOf="@+id/btnColorCircle"
+            app:layout_constraintStart_toEndOf="@+id/btnTempCircle" />
+
+        <Button
+            android:id="@+id/btnColorCircle"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:text="O"
+            app:layout_constraintBaseline_toBaselineOf="@+id/btnBrightDec"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/txtBrightness"
+        style="@style/SmallTitle"
+        android:text="Brightness  (1-100)" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <SeekBar
+            android:id="@+id/seekBrightness"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:max="99"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/etBrightness"
+            app:layout_constraintHorizontal_weight="5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etBrightness"
+            style="@style/SeekEditTextStyle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnTestBrightness"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/seekBrightness"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnTestBrightness"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#9988FF"
+            android:text="Bright"
+            app:layout_constraintBaseline_toBaselineOf="@+id/etBrightness"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/etBrightness" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/txtTemp"
+        style="@style/SmallTitle"
+        android:text="Color temperature (1700 - 6500)"/>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <SeekBar
+            android:id="@+id/seekTemp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:max="4800"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/etTemp"
+            app:layout_constraintHorizontal_weight="5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etTemp"
+            style="@style/SeekEditTextStyle"
+            android:hint="1700"
+            android:minEms="4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnTemp"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/seekTemp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnTemp"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FF8800"
+            android:text="Temp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/etTemp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/etTemp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/txtRGB"
+        style="@style/SmallTitle"
+        android:text="Color RGB (0-255)" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/etColorR"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="R"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/etColorG"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="G"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/etColorB"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="B"
+            android:inputType="number" />
+
+        <ImageView
+            android:id="@+id/viewColorRGBPreview"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/bg_togray"
+            android:foreground="?attr/selectableItemBackground"
+            android:src="@drawable/ic_color_lens" />
+
+        <Button
+            android:id="@+id/btnColorRGB"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RGB" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtHSV"
+        style="@style/SmallTitle"
+        android:text="Color HSV (0-359, 0-100)" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/etColorH"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:hint="Hue"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/etColorS"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:hint="Sat"
+            android:inputType="number" />
+
+        <ImageView
+            android:id="@+id/viewColorHSVPreview"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/bg_togray"
+            android:foreground="?attr/selectableItemBackground"
+            android:src="@drawable/ic_color_lens" />
+
+        <Button
+            android:id="@+id/btnColorHSV"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HSV" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtEditName"
+        style="@style/SmallTitle"
+        android:text="Rename"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/etEditName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="New name"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/btnEditName"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rename" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtFadeTitle"
+        style="@style/SmallTitle"
+        android:text="Fade timer" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/etFadeTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Fade time [ms]"
+            android:inputType="number"
+            android:text="500" />
+
+        <Button
+            android:id="@+id/btnTestFade"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="set" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtFlowTitle"
+        style="@style/SmallTitle"
+        android:text="Color flows" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnFlowSpectrum"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2"
+            android:backgroundTint="#008800"
+            android:text="Spectrum" />
+
+        <Button
+            android:id="@+id/btnFlowFlash"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Flash" />
+
+        <Button
+            android:id="@+id/btnFlowOff"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#000000"
+            android:text="Turn OFF" />
+
+        <Button
+            android:id="@+id/btnFlowStop"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#AA0000"
+            android:text="Stop" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtSceneTitle"
+        style="@style/SmallTitle"
+        android:text="Scenes"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnSceneSpectrum"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2"
+            android:backgroundTint="#008800"
+            android:layout_gravity="start|center_vertical"
+            android:text="Spectrum (50%)" />
+
+        <Button
+            android:id="@+id/btnSceneSpectrum2"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2"
+            android:backgroundTint="#008888"
+            android:layout_gravity="start|center_vertical"
+            android:text="Spectrum (slow)" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtOtherTitle"
+        style="@style/SmallTitle"
+        android:text="Set cron (delayed device power off)."/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnSetCron1"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#008800"
+            android:text="1 min" />
+
+        <Button
+            android:id="@+id/btnSetCron2"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="5 min" />
+
+        <Button
+            android:id="@+id/btnGetCron"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#000000"
+            android:text="Get" />
+
+        <Button
+            android:id="@+id/btnDelCron"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#AA0000"
+            android:text="Del" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtGetTitle"
+        style="@style/SmallTitle"
+        android:text="Prop Getters"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnGetColorMode"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2"
+            android:backgroundTint="#0088ff"
+            android:layout_gravity="start|center_vertical"
+            android:text="Color Mode" />
+
+        <Button
+            android:id="@+id/btnGetRgb"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2"
+            android:backgroundTint="#00ff88"
+            android:layout_gravity="start|center_vertical"
+            android:text="RGB" />
+
+        <Button
+            android:id="@+id/btnGetBright"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2"
+            android:backgroundTint="#ff8800"
+            android:layout_gravity="start|center_vertical"
+            android:text="Bright" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtRawTitle"
+        style="@style/SmallTitle"
+        android:text="Send raw command to the device" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/etRawCommand"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minLines="1"
+            android:hint="Paste JSON  here"
+            android:inputType="textMultiLine" />
+
+        <Button
+            android:id="@+id/btnRawCommand"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send" />
+    </LinearLayout>
+</LinearLayout>

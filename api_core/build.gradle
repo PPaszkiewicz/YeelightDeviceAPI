@@ -1,0 +1,13 @@
+apply plugin: 'java-library'
+apply plugin: 'maven'
+
+repositories {
+    jcenter()
+}
+
+dependencies{
+    // JSON used for serializing / deserializing messages
+    implementation 'org.json:json:20090211'
+    // NotNull / Nullable annotations to provide safer code
+    compileOnly 'org.jetbrains:annotations-java5:17.0.0'
+}
