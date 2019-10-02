@@ -19,7 +19,7 @@ Includes:
 Note that it's possible this demo will not work properly on emulators due to port forwarding issues (broadcast/announcement 
 packets will not be received). Recommend using physical device that connects to the same wifi as Yeelight devices.
 
-![Screenshot](/screenshot.png)
+![Screenshot](screenshot.png)
 
 ## License
 Copyright 2019 Paweł Paszkiewicz
