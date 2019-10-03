@@ -66,7 +66,7 @@ open class YeelightLiveData(
         )
     }
 
-    /** Obtain devices from the cache and set them us as value. This is called from [start], use this
+    /** Obtain devices from the cache and set them up as value. This is called from [start], use this
      * instead to prevent initial device scan and only emit cached devices. */
     fun restoreFromCache(): Boolean {
         // obtain devices from cache before scan finishes

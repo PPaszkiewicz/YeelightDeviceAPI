@@ -9,7 +9,7 @@ Includes **YeelightViewModel** and **YeelightLiveData** for MVVM implementation,
 
 Import in **build.gradle** or **build.gradle.kts**:
 ```gradle    
-implementation("com.github.PPaszkiewicz.YeelightDeviceAPI:1.0.0")
+implementation("com.github.PPaszkiewicz.YeelightDeviceAPI:1.0.1")
 ```
 
 ## License

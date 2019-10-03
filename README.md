@@ -17,7 +17,7 @@ This module is very light (only dependencies are JSON and null-safety annotation
 
 Import in **build.gradle** or **build.gradle.kts** (no need to import it explicitly when using **api_kotlin**):
 ```gradle
-implementation("com.github.PPaszkiewicz.YeelightDeviceAPI:api_core:1.0.0")
+implementation("com.github.PPaszkiewicz.YeelightDeviceAPI:api_core:1.0.1")
 ```
 ### Api_kotlin
 
@@ -27,7 +27,7 @@ Includes **YeelightViewModel** and **YeelightLiveData** for MVVM implementation,
 
 Import in **build.gradle** or **build.gradle.kts**:
 ```gradle    
-implementation("com.github.PPaszkiewicz.YeelightDeviceAPI:1.0.0")
+implementation("com.github.PPaszkiewicz.YeelightDeviceAPI:1.0.1")
 ```
 
 ### Demo
