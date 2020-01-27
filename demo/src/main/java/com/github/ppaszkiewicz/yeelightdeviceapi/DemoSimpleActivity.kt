@@ -18,7 +18,7 @@ class DemoSimpleActivity : AppCompatActivity(), Observer<YeelightDeviceMap> {
         const val TAG = "DemoSimpleActivity"
     }
 
-    /** Livedata that will automatically connect and keep connections alive. */
+    /** ViewModel that will automatically connect and keep connections alive. */
     private val yeelightVM: YeelightActiveViewModel by viewModels()
 
     /** inject android logger into yeelight library */

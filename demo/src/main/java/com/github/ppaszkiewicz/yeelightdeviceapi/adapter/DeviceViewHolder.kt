@@ -90,7 +90,7 @@ class DeviceViewHolder(itemView: View, val adapter: DevicesAdapterBase) : Recycl
         return when {
             !item.isOnline && !item.isDiscovered -> "[CACHED]"
             !item.isOnline -> "[OFFLINE]"
-            else -> ""
+            else -> "[${item.address}]"
         }
     }
 

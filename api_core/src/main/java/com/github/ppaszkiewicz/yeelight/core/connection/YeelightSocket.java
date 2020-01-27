@@ -113,12 +113,15 @@ public abstract class YeelightSocket<T extends YeelightConnection> {
      * Send commands asynchronously and flush afterwards. If any command fails to send, others won't be sent.
      */
     public synchronized void write(@NotNull YeelightCommand... msg) {
-        if (isAsyncRunning() && !isConnected()) {
-            //async was requested but not connected yet, store command for when it connects
-            commWaiting.addAll(Arrays.asList(msg));
-            return;
-        }
-        writeAsync(msg);
+        if(isAsyncRunning()){
+            if(isConnected()){
+                writeAsync(msg);
+            }else{
+                //async was requested but not connected yet, store command for when it connects
+                commWaiting.addAll(Arrays.asList(msg));
+            }
+        }else
+            YLog.e(TAG, "write@"+connection.deviceId+": cannot write because device is not connected.");
     }
 
     /**
@@ -135,7 +138,8 @@ public abstract class YeelightSocket<T extends YeelightConnection> {
                 out.write(json.getBytes());
                 out.flush();
             }
-        } catch (IOException ioE) {
+        } catch (NullPointerException | IOException ioE) {
+            // null pointer can trigger when "out" is null (disconnected)
             YLog.e(TAG, "write@"+ connection.deviceId +": "+ ioE.getMessage());
             //callback error
             connection.getCallbackParser().onYeelightDeviceConnectionError(connection.deviceId, ioE, lastSentCommand);
