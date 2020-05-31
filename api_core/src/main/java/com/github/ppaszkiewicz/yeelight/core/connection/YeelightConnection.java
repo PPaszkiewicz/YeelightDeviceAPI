@@ -28,7 +28,7 @@ public abstract class YeelightConnection {
     /**
      * Incrementable ID of next message.
      */
-    private int messageId = 0;
+    private int messageId = 1;
 
     /**
      * Parses all listener callbacks for this connection.

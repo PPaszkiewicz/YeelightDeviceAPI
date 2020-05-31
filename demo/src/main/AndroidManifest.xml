@@ -22,6 +22,7 @@
         <activity android:name=".DemoAutoActivity" android:launchMode="singleTop" />
         <activity android:name=".DemoSimpleActivity" android:launchMode="singleTop" />
         <activity android:name=".DemoNoScanActivity" />
+        <activity android:name=".DemoDirectActivity" />
     </application>
 
 </manifest>

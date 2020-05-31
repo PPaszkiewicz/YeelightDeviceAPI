@@ -136,6 +136,22 @@ public class YeelightDevice implements YeelightConnection.Listener {
     }
 
     /**
+     *  Create a single device using default port of 55443. This is not suitable for holding in
+     * a list or caching as it will not contain all properties like id, model fw_ver and supported methods.
+     * */
+    public static YeelightDevice createSingle(@NotNull String address){
+        return createSingle(address, 55443);
+    }
+
+    /**
+     * Create a single device. This is not suitable for holding in
+     * a list or caching as it will not contain all properties like id, model fw_ver and supported methods.
+     * */
+    public static YeelightDevice createSingle(@NotNull String address, int port){
+        return new YeelightDevice(0L, YeelightDeviceModel.UNSPECIFIED, address, port);
+    }
+
+    /**
      * Parses fields from provided map (discover or announcement message).
      */
     protected YeelightDevice(@NotNull Map<String, String> map) {
@@ -426,7 +442,7 @@ public class YeelightDevice implements YeelightConnection.Listener {
 
     /**
      * ID of a Yeelight WiFi LED device, 3rd party device should use this value to
-     * uniquely identified a Yeelight WiFi LED device.
+     * uniquely identify a Yeelight WiFi LED device.
      */
     public long getId() {
         return id;
@@ -493,11 +509,22 @@ public class YeelightDevice implements YeelightConnection.Listener {
      * Connection should automatically update this device, and you will receive callback to the listener.
      *
      * @param props properties to update
-     * @return id of request that will be sent, NOT the requested property.
+     * @return command that was sent
      */
     @NotNull
     public YeelightCommand updateProps(@NotNull YeelightProp... props) {
         return command(get_prop, (Object[]) props);
+    }
+
+    /**
+     * Request to update ALL possible properties from the device.<br>
+     * Connection should automatically update this device, and you will receive callback to the listener.
+     *
+     * @return command that was sent
+     * */
+    @NotNull
+    public YeelightCommand updateAllProps(){
+        return updateProps(YeelightProp.allValues);
     }
 
     /* ************************************************************
@@ -700,7 +727,7 @@ public class YeelightDevice implements YeelightConnection.Listener {
      * Save current state of smart LED in persistent memory. So if user powers off and then powers on the smart LED again (hard power reset),
      * the smart LED will show last saved state
      *
-     * @return id of sent command
+     * @return command that was sent
      */
     @NotNull
     public YeelightCommand setDefault() {
@@ -791,7 +818,7 @@ public class YeelightDevice implements YeelightConnection.Listener {
      *
      * @param task    job to run
      * @param minutes delay of job
-     * @return id of sent request
+     * @return command that was sent
      */
     @NotNull
     public YeelightCommand setCron(@NotNull YeelightCron.Type task, int minutes) {
@@ -818,7 +845,7 @@ public class YeelightDevice implements YeelightConnection.Listener {
      * Remove timed job.
      *
      * @param task job to remove
-     * @return id of sent request
+     * @return command that was sent
      */
     @NotNull
     public YeelightCommand delCron(@NotNull YeelightCron.Type task) {

@@ -272,8 +272,11 @@ abstract class DemoActivity : AppCompatActivity() {
 
         // raw commands
         btnRawCommand.setOnClickListener {
-            forEachChecked {
-                it.sendCommandMessage(YeelightCommand.Raw(etRawCommand.text.toString()))
+            forOneChecked { device ->
+                device.sendCommandMessage(YeelightCommand.Raw(etRawCommand.text.toString()))
+                        .onReply(this){
+                    uiToast(it.toString())
+                }
             }
         }
 

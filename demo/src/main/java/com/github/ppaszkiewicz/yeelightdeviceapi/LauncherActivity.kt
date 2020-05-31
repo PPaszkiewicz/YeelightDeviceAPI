@@ -44,6 +44,11 @@ class LauncherActivity : AppCompatActivity() {
             startActivity(Intent(this, DemoSimpleActivity::class.java))
         }
 
+        btnDirect.setOnClickListener {
+            isBasicActivitySelected = null
+            startActivity(Intent(this, DemoDirectActivity::class.java))
+        }
+
         btnStateful.setOnClickListener {
             isBasicActivitySelected = SelectedDemo.LIVE
             startActivity(Intent(this, DemoLiveActivity::class.java))

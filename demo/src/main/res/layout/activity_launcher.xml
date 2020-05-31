@@ -43,6 +43,19 @@
             android:text="Simple" />
 
         <TextView
+            android:text="Demo showing how to connect to device with specific IP."
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center" />
+
+        <Button
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:id="@+id/btnDirect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Direct" />
+
+        <TextView
             android:text="@string/tips_live"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

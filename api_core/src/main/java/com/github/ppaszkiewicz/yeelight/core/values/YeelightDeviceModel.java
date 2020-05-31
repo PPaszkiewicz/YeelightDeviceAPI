@@ -10,6 +10,7 @@ import static com.github.ppaszkiewicz.yeelight.core.values.YeelightDeviceModel.T
 import static com.github.ppaszkiewicz.yeelight.core.values.YeelightDeviceModel.Type.color;
 import static com.github.ppaszkiewicz.yeelight.core.values.YeelightDeviceModel.Type.mono;
 import static com.github.ppaszkiewicz.yeelight.core.values.YeelightDeviceModel.Type.stripe;
+import static com.github.ppaszkiewicz.yeelight.core.values.YeelightDeviceModel.Type.unspecified;
 
 /**
  * Model of the device.
@@ -37,6 +38,8 @@ public final class YeelightDeviceModel {
     public final static YeelightDeviceModel STRIPE = new YeelightDeviceModel(stripe);
     public final static YeelightDeviceModel CEILING = new YeelightDeviceModel(ceiling);
     public final static YeelightDeviceModel BSLAMP = new YeelightDeviceModel(bslamp);
+    public final static YeelightDeviceModel UNSPECIFIED = new YeelightDeviceModel(unspecified);
+
 
     // generates one of pre-set models
     private YeelightDeviceModel(@NotNull Type type) {
@@ -101,7 +104,8 @@ public final class YeelightDeviceModel {
         color("RGB bulb"),
         stripe("LED stripe"),
         ceiling("Ceiling light"),
-        bslamp("Bedside lamp");
+        bslamp("Bedside lamp"),
+        unspecified("unspecified");
 
         /**
          * User friendly name, returned in {@link #toString()}.

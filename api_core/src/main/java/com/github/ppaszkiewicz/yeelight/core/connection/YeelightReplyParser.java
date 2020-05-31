@@ -48,7 +48,7 @@ public abstract class YeelightReplyParser {
             try {
                 JSONObject reply = new JSONObject(json);
                 if (reply.has("id")) {
-                    int replyId = reply.getInt("id");
+                    int replyId = reply.optInt("id", YeelightReply.NO_ID);
                     if (reply.has("result")) {
                         JSONArray result = reply.getJSONArray("result");
                         if (replyId == YeelightReply.NO_ID) {

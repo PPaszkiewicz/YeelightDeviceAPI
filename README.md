@@ -1,5 +1,5 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Release](https://jitpack.io/v/PPaszkiewicz/YeelightDeviceAPI.svg)](https://jitpack.io/#User/Repo)
+[![Release](https://jitpack.io/v/PPaszkiewicz/YeelightDeviceAPI.svg)](https://jitpack.io/#PPaszkiewicz/YeelightDeviceAPI)
 
 YeelightDeviceAPI (Java / Kotlin-android)
 =====
@@ -17,7 +17,7 @@ This module is very light (only dependencies are JSON and null-safety annotation
 
 Import in **build.gradle** or **build.gradle.kts** (no need to import it explicitly when using **api_kotlin**):
 ```gradle
-implementation("com.github.PPaszkiewicz.YeelightDeviceAPI:api_core:1.0.2")
+implementation("com.github.PPaszkiewicz.YeelightDeviceAPI:api_core:1.0.3")
 ```
 ### Api_kotlin
 
@@ -27,7 +27,7 @@ Includes **YeelightViewModel** and **YeelightLiveData** for MVVM implementation,
 
 Import in **build.gradle** or **build.gradle.kts**:
 ```gradle    
-implementation("com.github.PPaszkiewicz.YeelightDeviceAPI:1.0.2")
+implementation("com.github.PPaszkiewicz.YeelightDeviceAPI:1.0.3")
 ```
 
 ### Demo

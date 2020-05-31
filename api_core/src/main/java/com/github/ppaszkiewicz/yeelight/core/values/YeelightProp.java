@@ -5,8 +5,10 @@ import com.github.ppaszkiewicz.yeelight.core.YLog;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Arrays;
+
 /**
- * Available device props.
+ * Available device props - enum names match values from documentation.
  */
 public enum YeelightProp {
     /** on: smart LED is turned on / off: smart LED is turned off */
@@ -28,7 +30,7 @@ public enum YeelightProp {
     /** The remaining time of a sleep timer. Range 1 ~ 60 (minutes) */
     delayoff,
     /** Current flow parameters (only meaningful when 'flowing' is 1) */
-    flow_params(4),
+    flow_params(4),     // 10
     /** 1: Music mode is on / 0: Music mode is off */
     music_on,
     /** The name of the device set by “set_name” command */
@@ -48,13 +50,13 @@ public enum YeelightProp {
     /** Color of background light (1 ~ 16777215) */
     bg_rgb,
     /** Hue of background light (0 - 369) */
-    bg_hue,
+    bg_hue,                 // 20
     /** Saturation of background light (0 - 100) */
     bg_sat,
     /** Brightness of night mode light (0 - 100) */
     nl_br,
     /** 0: daylight mode / 1: moonlight mode (ceiling light only) */
-    active_mode;
+    active_mode;            // 23
 
     public static final int TYPE_INT = 0;
     public static final int TYPE_STRING = 1;
@@ -88,6 +90,9 @@ public enum YeelightProp {
         return null;
     }
 
+    /** All props that can be updated. */
+    // invalid command error if all 23 props are provided
+    public static YeelightProp[] allValues = Arrays.copyOfRange(values(), 0, 22);
 
     /** Color modes of {@link #color_mode} and {@link #bg_lmode}. Their ordinal values match specs modes. */
     public enum ColorMode{

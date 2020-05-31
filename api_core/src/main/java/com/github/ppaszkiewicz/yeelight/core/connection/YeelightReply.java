@@ -13,7 +13,7 @@ import org.jetbrains.annotations.Nullable;
  */
 public class YeelightReply {
     /**
-     * No id was provided - only used by notification message.
+     * No id was provided - used by notification messages and unspecified errors.
      */
     public final static int NO_ID = -1;
     /**
@@ -135,12 +135,12 @@ public class YeelightReply {
                 && propHashMap.get(prop) != null;
     }
 
-    /** True if this message bears any prop updates. */
+    /** True if this message holds any property updates. */
     public boolean hasProps(){
         return propHashMap != null;
     }
 
-    /** Get method this reply was sent for. */
+    /** Get method this reply was sent for. Will always return null for raw commands. */
     @Nullable
     public YeelightMethod getMethod(){
         return command != null ? command.method : null;

@@ -104,7 +104,7 @@ public abstract class YeelightSocket<T extends YeelightConnection> {
      *
      * @param replyParser non-null reply parser implementation.
      */
-    public YeelightSocket setReplyParser(@NotNull YeelightReplyParser replyParser) {
+    public YeelightSocket<T> setReplyParser(@NotNull YeelightReplyParser replyParser) {
         this.replyParser = replyParser;
         return this;
     }
@@ -143,6 +143,7 @@ public abstract class YeelightSocket<T extends YeelightConnection> {
             YLog.e(TAG, "write@"+ connection.deviceId +": "+ ioE.getMessage());
             //callback error
             connection.getCallbackParser().onYeelightDeviceConnectionError(connection.deviceId, ioE, lastSentCommand);
+            // todo: make connection invalid/release it?
         }
     }
 
